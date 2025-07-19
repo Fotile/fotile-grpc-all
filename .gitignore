@@ -26,3 +26,6 @@ replay_pid*
 .gitignore
 
 .idea/
+
+target/
+**/target/*
