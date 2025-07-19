@@ -1,7 +1,11 @@
-# fotile-grpc-all
+# NAME
 one springboot grpc example
 
-# guide
+# GUIDE
+
+## prepare
+  My default jdk version is 11, if your environment is other version ,so just change ./pom.xml -> java.version .
+  
 
 ## package or install the client
   you need first  
