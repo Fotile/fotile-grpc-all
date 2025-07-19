@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.fotile.grpc</groupId>
+    <artifactId>fotile-grpc-client</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+
+    <build>
+        <plugins>
+            <!-- optional: clean dir -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.2.0</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <!-- the JAR only include .proto files -->
+                    <includes>
+                        <include>**/*.proto</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>proto-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>proto</classifier>  <!-- point：mark as proto source package -->
+                            <includes>
+                                <include>**/*.proto</include>  <!-- only include proto files -->
+                            </includes>
+                            <!-- exclude other files ,like java class files -->
+                            <excludes>
+                                <exclude>**/*.class</exclude>
+                                <exclude>META-INF/maven/**</exclude>
+                            </excludes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

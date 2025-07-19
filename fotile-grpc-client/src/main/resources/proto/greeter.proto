@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.fotile.grpc.client";
+option java_outer_classname = "GreeterServiceClient";
+
+package com.fotile.grpc.client.greeter;
+
+service GreeterService {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+  rpc SayHelloStream (HelloRequest) returns (stream HelloResponse);
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
