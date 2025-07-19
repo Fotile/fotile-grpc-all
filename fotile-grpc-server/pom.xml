@@ -11,7 +11,6 @@
 
     <artifactId>fotile-grpc-server</artifactId>
 
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -48,6 +47,8 @@
 
 
     <build>
+
+
         <extensions>
             <extension>
                 <groupId>kr.motd.maven</groupId>
@@ -73,7 +74,7 @@
                                 <artifactItem>
                                     <groupId>com.fotile.grpc</groupId>
                                     <artifactId>fotile-grpc-client</artifactId>
-                                    <version>1.0.0</version>
+                                    <version>${client-version}</version>
                                     <classifier>proto</classifier>
                                     <outputDirectory>${project.build.directory}/proto-shared</outputDirectory>
                                 </artifactItem>
