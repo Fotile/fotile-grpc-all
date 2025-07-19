@@ -1,6 +1,14 @@
 # gRPC 服务地址配置，与 @GrpcClient("grpc-server") 中的名称对应
 grpc.client:
   grpc-server:
-    address: static://localhost:9090
+    address: static://localhost:9092
     enableKeepAlive: true
     keepAliveWithoutCalls: true
+    negotiationType: plaintext
+
+
+server:
+  port: 9100
+spring:
+  application:
+    name: fotile-grpc-invoker
