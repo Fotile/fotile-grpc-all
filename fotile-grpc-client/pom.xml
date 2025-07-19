@@ -6,10 +6,12 @@
     <parent>
         <groupId>com.fotile.grpc</groupId>
         <artifactId>fotile-grpc-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>fotile-grpc-client</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
 
 
     <build>
@@ -18,13 +20,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
-                <version>3.2.0</version>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
                 <configuration>
                     <!-- the JAR only include .proto files -->
                     <includes>

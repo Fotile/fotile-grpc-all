@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.fotile.grpc.server.inner.client";
+option java_outer_classname = "ServerUserClient";
+// like namespace
+package com.fotile.grpc.server.inner.client;
+
+import "proto/common.proto";
+
+
+service UserService {
+  rpc SayUser (HelloUserRequest) returns (HelloUserResponse);
+  rpc SayUserStream (HelloUserRequest) returns (stream HelloUserResponse);
+}
+
+message HelloUserRequest {
+  string name = 1;
+  int32 age = 2;
+  com.fotile.grpc.client.common.HelloCommonRequest commonReq = 3;
+}
+
+message HelloUserResponse {
+  string message = 1;
+  uint32 code = 2;
+}
