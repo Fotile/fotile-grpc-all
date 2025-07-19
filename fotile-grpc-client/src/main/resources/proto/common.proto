@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.fotile.grpc.client";
+option java_outer_classname = "CommonServiceClient";
+// like namespace
+package com.fotile.grpc.client.common;
+
+
+
+service CommonService {
+  rpc SayCommon (HelloCommonRequest) returns (HelloCommonResponse);
+  rpc SayCommonStream (HelloCommonRequest) returns (stream HelloCommonResponse);
+}
+
+message HelloCommonRequest {
+  string name = 1;
+  int32 age = 2;
+}
+
+message HelloCommonResponse {
+  string message = 1;
+  uint32 code = 2;
+}

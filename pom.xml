@@ -8,7 +8,9 @@
     <artifactId>fotile-grpc-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-
+    <modules>
+        <module>fotile-grpc-client</module>
+    </modules>
 
 
     <properties>
